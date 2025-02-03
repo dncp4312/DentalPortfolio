@@ -161,6 +161,7 @@ section {
     justify-content: space-between;
     width: 45rem;
     height: 5rem;
+    gap: 2rem;
 }
  
 .btn-box .btn {
@@ -168,15 +169,14 @@ section {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 15rem;
+    width: 25rem;
     height: 100%;
     background: var(--main-color);
     border: .2rem solid var(--main-color);
     border-radius: .8rem;
     font-size: 1.8rem;
     font-weight: 600;
-    letter-spacing: .1rem;
-    color: var(--bg-color);
+    color: white;
     z-index: 1;
     overflow: hidden;
     transition: .5s;
@@ -1003,5 +1003,25 @@ section:nth-child(odd) .animate.scroll,
     }
     .testimonial-row .testimonial-column {
         flex: 1 1 45%; /* Adjust for smaller screens */
+    }
+}
+
+.contact-img {
+    max-width: 100%;
+    height: auto;
+    width: 350px; /* Adjust the width as needed */
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .contact-img {
+        width: 250px; /* Adjust the width for smaller screens */
+    }
+}
+
+@media (max-width: 520px) {
+    .contact-img {
+        width: 200px; /* Adjust the width for even smaller screens */
     }
 }
