@@ -12,9 +12,9 @@
 }
  
 :root {
-    --bg-color: #ffffff;
-    --second-bg-color: #ffffff;
-    --text-color: #2e4053;
+    --bg-color: #2e4053;
+    --second-bg-color: #2e4053;
+    --text-color: #ffffff;
     --main-color: #ffd700;
 }
  
@@ -95,7 +95,7 @@ section {
     padding: 0 9%;
     /* background: url('/images/capture__bg.PNG') no-repeat; */
     background-size: cover;
-    background: #ffffff;
+    background: #2e4053;
     background-position: center;
 }
  
