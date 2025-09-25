@@ -37,15 +37,61 @@
     <section class="home" id="home">
         <div class="home-content">
             <h1>Hi, I'm <span>Nilookumari</span></h1>
-            <!-- <div class="text-animate">
-                <h3>Front-End Developer</h3>
-                <span class="animate" style="--i:3;"></span>
-            </div> -->
             <p>A family dentist here in Dubai, dedicated to transforming lives, one smile at a time. With advanced Oral and Maxillofacial Pathology training and years of clinical experience, I am committed to combining compassion with expertise to provide top-quality personalized dental care to our community</p>
- 
-            <div class="btn-box">
-                <a href="#" class="btn">Book an Appointment</a>
-            </div>
+
+	    <!-- Button -->
+	    <div class="btn-box min-width=1000px">
+	      <a href="https://zcal.co/i/s_-IT15O" class="btn" id="openZcal">ZCAL Appointment</a>
+	    </div>
+
+	    <!-- Modal structure -->
+	    <div id="zcalModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+		 background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:9999;">
+	      <div style="position:relative; width:90%; max-width:1120px; height:700px; background:#fff; border-radius:8px; overflow:hidden;">
+		<iframe src="https://zcal.co/i/s_-IT15O" style="width:100%; height:100%; border:0;"></iframe>
+		<button id="closeZcal" style="position:absolute; top:10px; right:10px; background:#000; color:#fff; border:none; padding:5px 10px; cursor:pointer; border-radius:4px;">X</button>
+	      </div>
+	    </div>
+
+	    <!-- JS to toggle modal -->
+	    <script>
+	      (function(){
+		const openBtn = document.getElementById('openZcal');
+		const modal = document.getElementById('zcalModal');
+		const closeBtn = document.getElementById('closeZcal');
+
+		if(!openBtn || !modal) return;
+
+		// Open modal on click
+		openBtn.addEventListener('click', function(e){
+		  e.preventDefault(); // prevent normal link
+		  modal.style.display = 'flex';
+		});
+
+		// Close modal on X button
+		closeBtn.addEventListener('click', function(){
+		  modal.style.display = 'none';
+		});
+
+		// Close modal when clicking outside iframe
+		window.addEventListener('click', function(e){
+		  if(e.target === modal){
+		    modal.style.display = 'none';
+		  }
+		});
+	      })();
+	    </script>
+
+	    <!-- Include Calendly widget CSS and JS once in your page -->
+	    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+	    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+	    <div class="btn-box">
+		<a href="#" class="btn"
+			    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/smileuptest/30min?hide_event_type_details=0&hide_gdpr_banner=0'}); return false;">
+		    Calendly Appointment
+		</a>
+	    </div>
         </div>
  
         <div class="home-sci">
