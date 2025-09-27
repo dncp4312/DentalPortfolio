@@ -1025,3 +1025,103 @@ section:nth-child(odd) .animate.scroll,
         width: 200px; /* Adjust the width for even smaller screens */
     }
 }
+
+/* ==================================== */
+/* === Services and Specialists CSS === */
+/* ==================================== */
+
+/* Services and Specialists Section Styling */
+.services, .specialists {
+    padding: 6rem 0;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+
+.heading span {
+    color: var(--main-color);
+}
+
+/* Container for Services and Specialists */
+.services-container, .specialists-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 0 5%;
+}
+
+/* Individual Service Item Styling */
+.services-item {
+    background: var(--second-bg-color);
+    padding: 3rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: 0.2rem solid var(--main-color);
+    transition: 0.5s ease;
+}
+
+.services-item:hover {
+    transform: scale(1.05);
+    border-color: var(--white-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.services-item img {
+    max-width: 100%;
+    border-radius: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.services-item h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--main-color);
+}
+
+.services-item p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Individual Specialist Card Styling */
+.specialist-card {
+    background: var(--second-bg-color);
+    padding: 3rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: 0.2rem solid var(--main-color);
+    transition: 0.5s ease;
+}
+
+.specialist-card:hover {
+    transform: scale(1.05);
+    border-color: var(--white-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.specialist-card img {
+    max-width: 100%;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+}
+
+.specialist-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--main-color);
+}
+
+.specialist-card p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}

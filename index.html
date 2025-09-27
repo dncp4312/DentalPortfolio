@@ -1,102 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmileUp Dental Clinic</title>
- 
+
     <link rel="stylesheet" href="style.css">
- 
-    <!-- box icons -->
+
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
- 
+
 <body>
- 
-    <!-- header design -->
+
     <header class="header">
         <a href="#" class="logo">Smile Up Dental Clinic</a>
- 
+
         <div class="bx bx-menu" id="menu-icon"></div>
- 
+
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#specialists">Our Specialists</a>
             <a href="#education">Education</a>
             <a href="#testimonial">Testimonials</a>
             <a href="#skills">Competencies</a>
             <a href="#contact">Contact Me</a>
- 
             <span class="active-nav"></span>
         </nav>
     </header>
- 
-    <!-- home section design https://wa.link/fredcq -->
+
     <section class="home" id="home">
         <div class="home-content">
             <h1>Hi, I'm <span>Nilookumari</span></h1>
             <p>A family dentist here in Dubai, dedicated to transforming lives, one smile at a time. With advanced Oral and Maxillofacial Pathology training and years of clinical experience, I am committed to combining compassion with expertise to provide top-quality personalized dental care to our community</p>
 
-	    <!-- Button -->
-	    <div class="btn-box min-width=1000px">
-	      <a href="https://zcal.co/i/s_-IT15O" class="btn" id="openZcal">ZCAL Appointment</a>
-	    </div>
+            <div class="btn-box min-width=1000px">
+                <a href="https://zcal.co/i/s_-IT15O" class="btn" id="openZcal">ZCAL Appointment</a>
+            </div>
 
-	    <!-- Modal structure -->
-	    <div id="zcalModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
-		 background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:9999;">
-	      <div style="position:relative; width:90%; max-width:1120px; height:700px; background:#fff; border-radius:8px; overflow:hidden;">
-		<iframe src="https://zcal.co/i/s_-IT15O" style="width:100%; height:100%; border:0;"></iframe>
-		<button id="closeZcal" style="position:absolute; top:10px; right:10px; background:#000; color:#fff; border:none; padding:5px 10px; cursor:pointer; border-radius:4px;">X</button>
-	      </div>
-	    </div>
+            <div id="zcalModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+                background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:9999;">
+                <div style="position:relative; width:90%; max-width:1120px; height:700px; background:#fff; border-radius:8px; overflow:hidden;">
+                    <iframe src="https://zcal.co/i/s_-IT15O" style="width:100%; height:100%; border:0;"></iframe>
+                    <button id="closeZcal" style="position:absolute; top:10px; right:10px; background:#000; color:#fff; border:none; padding:5px 10px; cursor:pointer; border-radius:4px;">X</button>
+                </div>
+            </div>
 
-	    <!-- JS to toggle modal -->
-	    <script>
-	      (function(){
-		const openBtn = document.getElementById('openZcal');
-		const modal = document.getElementById('zcalModal');
-		const closeBtn = document.getElementById('closeZcal');
+            <script>
+                (function() {
+                    const openBtn = document.getElementById('openZcal');
+                    const modal = document.getElementById('zcalModal');
+                    const closeBtn = document.getElementById('closeZcal');
 
-		if(!openBtn || !modal) return;
+                    if (!openBtn || !modal) return;
 
-		// Open modal on click
-		openBtn.addEventListener('click', function(e){
-		  e.preventDefault(); // prevent normal link
-		  modal.style.display = 'flex';
-		});
+                    // Open modal on click
+                    openBtn.addEventListener('click', function(e) {
+                        e.preventDefault(); // prevent normal link
+                        modal.style.display = 'flex';
+                    });
 
-		// Close modal on X button
-		closeBtn.addEventListener('click', function(){
-		  modal.style.display = 'none';
-		});
+                    // Close modal on X button
+                    closeBtn.addEventListener('click', function() {
+                        modal.style.display = 'none';
+                    });
 
-		// Close modal when clicking outside iframe
-		window.addEventListener('click', function(e){
-		  if(e.target === modal){
-		    modal.style.display = 'none';
-		  }
-		});
-	      })();
-	    </script>
+                    // Close modal when clicking outside iframe
+                    window.addEventListener('click', function(e) {
+                        if (e.target === modal) {
+                            modal.style.display = 'none';
+                        }
+                    });
+                })();
+            </script>
 
-	    <!-- Include Calendly widget CSS and JS once in your page -->
-	    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-	    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+            <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+            <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
-	    <div class="btn-box">
-		<a href="#" class="btn"
-			    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/smileuptest/30min?hide_event_type_details=0&hide_gdpr_banner=0'}); return false;">
-		    Calendly Appointment
-		</a>
-	    </div>
+            <div class="btn-box">
+                <a href="#" class="btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/smileuptest/30min?hide_event_type_details=0&hide_gdpr_banner=0'}); return false;">
+                    Calendly Appointment
+                </a>
+            </div>
         </div>
- 
+
         <div class="home-sci">
             <a href="https://www.instagram.com/drnilookumari" target="_blank"><i class='bx bxl-instagram'></i></a>
-            <!-- <a href="https://www.instagram.com/smile_up_dental_clinic_pune" target="_blank"><i class='bx bxl-instagram'></i></a> -->
             <a href="https://www.linkedin.com/in/dr-neelu-choudhary" target="_blank"><i class='bx bxl-linkedin'></i></a>
             <a href="https://wa.link/fredcq" target="_blank"><i class='bx bxl-whatsapp'></i></a>
             <a href="mailto:smileupdentalclinic1216@gmail.com" target="_blank"><i class='bx bx-envelope'></i></a>
@@ -105,36 +97,130 @@
             <img class="right__ali" src="image.png" alt="" width="400px" height="400px">
         </div>
     </section>
- 
-    <!-- about section design -->
+
     <section class="about" id="about">
         <h2 class="heading">About <span>Me</span></h2>
- 
+
         <div class="about-img">
             <img src="image.png" alt="my__image">
             <span class="circle-spin"></span>
         </div>
- 
+
         <div class="about-content">
             <h3>Hi there, I am Dr. Nilookumari, glad to see you!<span class="animate scroll" style="--i:3;"></span></h3>
-            <p>Your trusted family dentist.</p> 
+            <p>Your trusted family dentist.</p>
             <p>My mission is to help you and your loved ones maintain happy, healthy smiles for life. From toddlers to grandparents, I provide personalized care for all ages in a comfortable, family-friendly environment.
             </p>
         </div>
     </section>
- 
- 
- 
-    <!-- education section design -->
+
+    <section class="services" id="services">
+        <h2 class="heading">Services <span>Offered</span></h2>
+        <div class="services-container">
+            <div class="services-box">
+                <img src="services-dental-xrays.jpg" alt="Dental X-rays">
+                <h3>Dental X-rays</h3>
+                <p>We use state-of-the-art dental X-ray technology to get a detailed view of your teeth, bones, and gums. This helps us accurately diagnose dental issues, such as cavities, bone loss, and impacted teeth, ensuring a precise treatment plan for your oral health.</p>
+            </div>
+            <div class="services-box">
+                <img src="services-scaling-polishing.jpg" alt="Scaling and Polishing">
+                <h3>Scaling and Polishing</h3>
+                <p>A professional cleaning to remove plaque and tartar buildup from your teeth and below the gum line. Scaling and polishing not only leaves your teeth feeling fresh and clean but also helps prevent gum disease and cavities, contributing to a healthier, brighter smile.</p>
+            </div>
+            <div class="services-box">
+                <img src="services-teeth-whitening.jpg" alt="Teeth Whitening">
+                <h3>Teeth Whitening</h3>
+                <p>Brighten your smile with our professional teeth whitening services. We offer safe and effective treatments to remove stains and discoloration, giving you a noticeably whiter and more confident smile in just one visit.</p>
+            </div>
+            <div class="services-box">
+                <img src="services-restorative-treatment.jpg" alt="Restorative Treatment">
+                <h3>Restorative Treatment</h3>
+                <p>Restore the function and aesthetics of your teeth with our restorative treatments, including fillings, crowns, and bridges. We use high-quality, durable materials to repair damaged or decayed teeth, allowing you to chew and smile with ease.</p>
+            </div>
+            <div class="services-box">
+                <img src="services-root-canal-treatment.jpg" alt="Root Canal Treatment">
+                <h3>Root Canal Treatment</h3>
+                <p>A root canal treatment is a safe and effective procedure to save a severely damaged or infected tooth. We gently remove the infected pulp and clean the root canal, relieving pain and preserving your natural tooth from extraction.</p>
+            </div>
+            <div class="services-box">
+                <img src="services-dental-implants.jpg" alt="Dental Implants">
+                <h3>Dental Implants</h3>
+                <p>Dental implants are a long-lasting and natural-looking solution for replacing missing teeth. They are surgically placed into your jawbone, acting as a strong foundation for a permanent tooth replacement, which restores both function and aesthetics.</p>
+            </div>
+            <div class="services-box">
+                <img src="services-orthodontic-treatment.jpg" alt="Orthodontic Treatment">
+                <h3>Orthodontic Treatment</h3>
+                <p>Correct misaligned teeth and improve your bite with our orthodontic services. We offer various options, including traditional braces and modern clear aligners, to help you achieve a straight and beautiful smile that you'll be proud to show off.</p>
+            </div>
+            <div class="services-box">
+                <img src="services-dental-extraction.jpg" alt="Dental Extraction">
+                <h3>Dental Extraction</h3>
+                <p>When a tooth is severely damaged or poses a risk to your oral health, extraction may be the best option. Our skilled dentists perform extractions with a gentle touch, ensuring your comfort and providing clear instructions for a smooth recovery.</p>
+            </div>
+            <div class="services-box">
+                <img src="services-pediatric-dentistry.jpg" alt="Pediatric Dentistry">
+                <h3>Pediatric Dentistry</h3>
+                <p>We provide friendly and gentle dental care for our youngest patients. Our pediatric services focus on creating a positive dental experience for children, promoting good oral hygiene habits early on, and monitoring their dental development as they grow.</p>
+            </div>
+            <div class="services-box">
+                <img src="services-smile-designing.jpg" alt="Smile Designing (Veneers)">
+                <h3>Smile Designing (Veneers)</h3>
+                <p>Transform your smile with smile designing and veneers. This cosmetic treatment involves placing thin, custom-made shells over your teeth to correct imperfections, such as chips, cracks, and discoloration, giving you a flawless and symmetrical smile.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="specialists" id="specialists">
+        <h2 class="heading">Our <span>Specialists</span></h2>
+        <div class="specialists-container">
+            <div class="specialist-box">
+                <img src="dr-ghevaram-prajapati.jpg" alt="Dr. Ghevaram Prajapati">
+                <h3>Dr. Ghevaram Prajapati</h3>
+                <p>General Dentist & Implantologist</p>
+                <p>A highly experienced implant specialist, Dr. Prajapati has been serving patients since 2013. He focuses on restoring smiles with advanced implant procedures, helping patients regain full function and confidence with durable, long-lasting solutions.</p>
+            </div>
+            <div class="specialist-box">
+                <img src="dr-jatan-sanghavi.jpg" alt="Dr. Jatan Sanghavi">
+                <h3>Dr. Jatan Sanghavi</h3>
+                <p>Orthodontist</p>
+                <p>Dr. Sanghavi is a dedicated orthodontic specialist since 2013, with expertise in both traditional braces and modern clear aligner technology. He is passionate about creating beautifully aligned smiles for patients of all ages through personalized treatment plans.</p>
+            </div>
+            <div class="specialist-box">
+                <img src="dr-uday-londhe.jpg" alt="Dr. Uday Londhe">
+                <h3>Dr. Uday Londhe</h3>
+                <p>Oral & Maxillofacial Surgeon</p>
+                <p>Since 2015, Dr. Londhe has been a trusted Oral & Maxillofacial Surgeon specializing in complex surgical procedures. His expertise includes wisdom tooth extractions, jaw surgery, and other advanced treatments, all performed with a commitment to patient safety and comfort.</p>
+            </div>
+            <div class="specialist-box">
+                <img src="dr-vaibhav-jathar.jpg" alt="Dr. Vaibhav Jathar">
+                <h3>Dr. Vaibhav Jathar</h3>
+                <p>Maxillofacial Prosthodontist</p>
+                <p>Dr. Vaibhav Jathar is a skilled Maxillofacial Prosthodontist and Implantologist known for his precision, expertise and patient-centric approach. With strong academic background and years of clinical experience, he specialized in advanced dental restorations, full-mouth rehabilitations, and implant dentistry - helping patients regain both function and confidence in their smile.</p>
+            </div>
+            <div class="specialist-box">
+                <img src="dr-sujit-malusare.jpg" alt="Dr. Sujit Malusare">
+                <h3>Dr. Sujit Malusare</h3>
+                <p>Cosmetic Dentist</p>
+		<p>Dr. Sujit Malusare is an experienced cosmetic dentist dedicated to creating beautiful and confident smiles. He specializes in a variety of cosmetic procedures, including smile makeovers, porcelain veneers, and professional teeth whitening, to help you achieve the perfect smile.</p>
+            </div>
+            <div class="specialist-box">
+                <img src="dr-niloo-choudhary.jpg" alt="Dr. Niloo Choudhary">
+                <h3>Dr. Niloo Choudhary</h3>
+                <p>General & Cosmetic Dentist</p>
+                <p>Since 2016, Dr. Choudhary has been providing comprehensive general and cosmetic dentistry. She is dedicated to improving her patients' oral health and enhancing their smiles through procedures like teeth whitening, veneers, and personalized treatment plans, combining art and science for beautiful results.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="education" id="education">
         <h2 class="heading">My <span>Journey</span></h2>
- 
+
         <div class="education-row">
             <div class="education-column">
                 <h3 class="title">Education</h3>
- 
+
                 <div class="education-box">
-                  <div class="education-content">
+                    <div class="education-content">
                         <div class="content">
                             <div class="year"><i class='bx bxs-calendar'></i> 2017 - 2020</div>
                             <h3>Master of Dental surgery - Dr. D. Y. Patil University</h3>
@@ -145,17 +231,14 @@
                         <div class="content">
                             <div class="year"><i class='bx bxs-calendar'></i> 2011 - 2016</div>
                             <h3>Bachelor of Dental Surgery - Dr. D. Y. Patil University</h3>
-                            <!-- <p>A great university that I have learned lot of things in there</p> -->
-                        </div>
+                            </div>
                     </div>
- 
- 
                 </div>
             </div>
- 
+
             <div class="education-column">
                 <h3 class="title">Experience</span></h3>
- 
+
                 <div class="education-box">
                     <div class="education-content">
                         <div class="content">
@@ -164,7 +247,7 @@
                             <p>Dec 2016 - July 2024</p>
                         </div>
                     </div>
- 
+
                     <div class="education-content">
                         <div class="content">
                             <div class="year"><i class='bx bxs-calendar'></i> 2019 - 2020</div>
@@ -172,7 +255,7 @@
                             <p>Dec 2019 - Nov 2020</p>
                         </div>
                     </div>
- 
+
                     <div class="education-content">
                         <div class="content">
                             <div class="year"><i class='bx bxs-calendar'></i> 2015 - 2016</div>
@@ -181,12 +264,11 @@
                         </div>
                     </div>
                 </div>
- 
+
             </div>
         </div>
     </section>
- 
-    <!-- testimonial section design  -->
+
     <section class="testimonial" id="testimonial">
         <h2 class="heading">Testimonials</h2>
         <div class="testimonial-row">
@@ -214,95 +296,82 @@
                 <div class="testimonial-box">
                     <div class="testimonial-content">
                         <i class='bx bxs-quote-alt-left'></i>
-                        <p>Got my root canal done from Dr. Niloo  must say, had a really good first experience. The appointment booking process, the doctor  and receptionists were really helpful and were a call incase of any concerns. Highly recommended! Thanks for the amazing treatment!</p>
+                        <p>Got my root canal done from Dr. Niloo must say, had a really good first experience. The appointment booking process, the doctor and receptionists were really helpful and were a call incase of any concerns. Highly recommended! Thanks for the amazing treatment!</p>
                         <h3>Abhiruchi Gaikwad</h3>
                     </div>
                 </div>
             </div>
         </div>
     </section>
- 
-    <!-- skills section design -->
+
     <section class="skills" id="skills">
         <h2 class="heading">My <span>Competencies</span></h2>
- 
+
         <div class="skills-row">
             <div class="skills-column">
-                <!-- <h3 class="title">Coding Skills</h3> -->
- 
                 <div class="skills-box">
                     <div class="skills-content">
                         <div class="progress">
                             <h3>Excellent Patient Communication<span>95%</span></h3>
                             <div class="bar"><span></span></div>
                         </div>
- 
+
                         <div class="progress">
                             <h3>Exceptional Patient Care <span>95%</span></h3>
                             <div class="bar"><span></span></div>
                         </div>
- 
+
                         <div class="progress">
                             <h3>Customised Plan Treatment <span>90%</span></h3>
                             <div class="bar"><span></span></div>
                         </div>
- 
                     </div>
- 
                 </div>
             </div>
- 
+
             <div class="skills-column">
-                <!-- <h3 class="title">Professional Skills</h3> -->
- 
                 <div class="skills-box">
                     <div class="skills-content">
                         <div class="progress">
                             <h3>Safety Standards and Dental Hygiene<span>100%</span></h3>
                             <div class="bar"><span></span></div>
                         </div>
- 
+
                         <div class="progress">
                             <h3>Promoting Good Oral Health<span>95%</span></h3>
                             <div class="bar"><span></span></div>
                         </div>
- 
+
                         <div class="progress">
                             <h3>Dedicated Examination & Diagnosis<span>99%</span></h3>
                             <div class="bar"><span></span></div>
                         </div>
-                         </div>
                     </div>
- 
                 </div>
             </div>
         </div>
     </section>
- 
-    <!-- contact section design -->
+
     <section class="contact" id="contact">
         <h2 class="heading">Scan this to connect with <span>Me</span></h2>
- 
+
         <img src="qr.png" alt="qr-code" class="contact-img">
     </section>
- 
-    <!-- footer design -->
+
     <footer class="footer">
         <div class="footer-text">
             <p>Copyright &copy; 2025 | Designed and
                 Maintained by The Guardian Group LLC | All
                 Rights Reserved</p>
- 
+
         </div>
- 
+
         <div class="footer-iconTop">
             <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
- 
         </div>
     </footer>
- 
- 
+
     <script src="script.js"></script>
 </body>
- 
+
 </html>
