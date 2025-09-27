@@ -191,12 +191,12 @@ section {
     color: var(--main-color);
 }
  
-.btn-box .btn:nth-child(2):hover {
-    color: var(--bg-color);
-}
- 
 .btn-box .btn:nth-child(2)::before {
     background: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2):hover {
+    color: var(--bg-color);
 }
  
 .btn-box .btn::before {
@@ -210,9 +210,13 @@ section {
     z-index: -1;
     transition: .5s;
 }
- 
+
 .btn-box .btn:hover::before {
     width: 100%;
+}
+
+.btn-box .btn:hover {
+    color: var(--main-color);
 }
  
 .home-sci {
@@ -419,9 +423,17 @@ span {
     z-index: -1;
     transition: .5s;
 }
- 
+
 .education-content .content:hover::before {
     width: 100%;
+}
+
+.education-content .content:hover h3 {
+    color: var(--main-color);
+}
+
+.education-content .content:hover p {
+    color: var(--text-color);
 }
  
 .education-content .content .year {
@@ -496,9 +508,17 @@ span {
     z-index: -1;
     transition: .5s;
 }
- 
+
 .skills-box .skills-content:hover::before {
     width: 100%;
+}
+
+.skills-box .skills-content:hover h3 {
+    color: var(--main-color);
+}
+
+.skills-box .skills-content:hover h3 span {
+    color: var(--main-color);
 }
  
 .skills-content .progress {
@@ -1055,73 +1075,234 @@ section:nth-child(odd) .animate.scroll,
 }
 
 /* Individual Service Item Styling */
-.services-item {
+.services-box {
     background: var(--second-bg-color);
     padding: 3rem;
     border-radius: 2rem;
     text-align: center;
     border: 0.2rem solid var(--main-color);
     transition: 0.5s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.services-item:hover {
-    transform: scale(1.05);
-    border-color: var(--white-color);
-    box-shadow: 0 0 1rem var(--main-color);
+.services-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 2rem rgba(255, 215, 0, 0.3);
 }
 
-.services-item img {
-    max-width: 100%;
+.services-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.services-box:hover::before {
+    width: 100%;
+}
+
+.services-box:hover h3 {
+    color: var(--bg-color);
+}
+
+.services-box:hover p {
+    color: var(--bg-color);
+}
+
+.services-box img {
+    width: 100%;
+    height: 200px;
     border-radius: 1.5rem;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    display: block;
+    border: 0.2rem solid var(--main-color);
+    transition: 0.5s ease;
+}
+
+.services-box:hover img {
+    transform: scale(1.05);
+    border-color: var(--text-color);
+}
+
+.services-box h3 {
+    font-size: 2.2rem;
     margin-bottom: 1.5rem;
-}
-
-.services-item h3 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
     color: var(--main-color);
+    font-weight: 600;
 }
 
-.services-item p {
-    font-size: 1.6rem;
+.services-box p {
+    font-size: 1.5rem;
     color: var(--text-color);
     line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Responsive design for service cards */
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 0 2%;
+    }
+    
+    .services-box {
+        padding: 2rem;
+    }
+    
+    .services-box img {
+        height: 150px;
+    }
+    
+    .services-box h3 {
+        font-size: 2rem;
+    }
+    
+    .services-box p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .services-box {
+        padding: 1.5rem;
+    }
+    
+    .services-box img {
+        height: 120px;
+    }
 }
 
 /* Individual Specialist Card Styling */
-.specialist-card {
+.specialist-box {
     background: var(--second-bg-color);
     padding: 3rem;
     border-radius: 2rem;
     text-align: center;
     border: 0.2rem solid var(--main-color);
     transition: 0.5s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.specialist-card:hover {
-    transform: scale(1.05);
-    border-color: var(--white-color);
-    box-shadow: 0 0 1rem var(--main-color);
+.specialist-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 2rem rgba(255, 215, 0, 0.3);
 }
 
-.specialist-card img {
-    max-width: 100%;
+.specialist-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.specialist-box:hover::before {
+    width: 100%;
+}
+
+.specialist-box:hover h3,
+.specialist-box:hover p:first-of-type,
+.specialist-box:hover p:last-of-type {
+    color: var(--bg-color) !important;
+}
+
+.specialist-box img {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
     object-fit: cover;
+    margin: 0 auto 2rem;
+    display: block;
+    border: 0.3rem solid var(--main-color);
+    transition: 0.5s ease;
+}
+
+.specialist-box:hover img {
+    transform: scale(1.1);
+    border-color: var(--text-color);
+}
+
+.specialist-box h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.specialist-box p:first-of-type {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-weight: 500;
     margin-bottom: 1.5rem;
 }
 
-.specialist-card h3 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--main-color);
-}
-
-.specialist-card p {
-    font-size: 1.6rem;
+.specialist-box p:last-of-type {
+    font-size: 1.5rem;
     color: var(--text-color);
     line-height: 1.6;
-    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Responsive design for specialist cards */
+@media (max-width: 768px) {
+    .specialists-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 0 2%;
+    }
+    
+    .specialist-box {
+        padding: 2rem;
+    }
+    
+    .specialist-box img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .specialist-box h3 {
+        font-size: 2rem;
+    }
+    
+    .specialist-box p:first-of-type {
+        font-size: 1.6rem;
+    }
+    
+    .specialist-box p:last-of-type {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .specialists-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .specialist-box {
+        padding: 1.5rem;
+    }
+    
+    .specialist-box img {
+        width: 120px;
+        height: 120px;
+    }
 }
