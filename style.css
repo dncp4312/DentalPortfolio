@@ -60,7 +60,7 @@ body {
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
-    font-weight: 500;
+    font-weight: 600;
     margin-left: 3.5rem;
     transition: .3s;
 }
@@ -83,16 +83,21 @@ section {
     padding: 10rem 9% 2rem;
 }
 .right__ali {
-    width: 420px;
-    height: 420px;
+    width: 88%;
+    height: 88%;
     border-radius: 50%;
-    margin-left: 200px;
-    margin-top: 80px;
-  }
+    object-fit: cover;
+    margin: 0;
+    display: block;
+}
+
 .home {
+    margin-top: 16rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     padding: 0 9%;
+    gap: 3rem;
+    flex-wrap: nowrap; /* do not wrap until mobile breakpoint */
     /* background: url('/images/capture__bg.PNG') no-repeat; */
     background-size: cover;
     background: #2e4053;
@@ -100,8 +105,10 @@ section {
 }
  
 .home-content {
-    max-width: 60rem;
+    max-width: none;
     z-index: 99;
+    flex: 1 1 auto; /* allow text to shrink/grow */
+    min-width: 320px; /* text can shrink but not below this */
 }
  
 .home-content h1 {
@@ -195,6 +202,59 @@ section {
     background: var(--main-color);
 }
 
+.right__img {
+    margin-left: auto;
+    position: relative;
+    width: min(420px, 35vw);
+    max-width: 100%;
+    min-width: 260px; /* keep image larger and stable */
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto; /* image does not shrink */
+}
+
+.right__img .circle-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: .3rem solid var(--second-bg-color);
+    border-bottom: .3rem solid var(--second-bg-color);
+    border-left: .3rem solid var(--main-color);
+    border-right: .3rem solid var(--main-color);
+    animation: aboutSpinner 8s linear infinite;
+}
+
+@media (max-width: 991px) {
+    .right__img {
+        width: clamp(220px, 35vw, 360px);
+        min-width: 220px;
+        margin-right: 0;
+        margin-left: auto;
+    }
+    .right__ali {
+        display: block;
+    }
+}
+
+@media (max-width: 520px) {
+    .home {
+        flex-direction: column;
+        align-items: flex-start;
+	margin-top: 10rem;
+    }
+    .right__img {
+        margin: 2rem auto 0;
+        width: clamp(220px, 60vw, 320px);
+        min-width: 220px;
+    }
+}
+
 .btn-box .btn:nth-child(2):hover {
     color: var(--bg-color);
 }
@@ -220,11 +280,12 @@ section {
 }
  
 .home-sci {
-    position: absolute;
-    bottom: 4rem;
+    position: static;
+    margin-top: 20px;
     width: 200px;
     display: flex;
     justify-content: space-between;
+    z-index: 2; /* keep above other content */
 }
  
 .home-sci a {
@@ -772,9 +833,6 @@ section:nth-child(odd) .animate.scroll,
     .header {
         padding: 2rem 4%;
     }
-    .right__ali{
-        display: none;
-    }
     section {
         padding: 10rem 4% 2rem;
     }
@@ -794,11 +852,12 @@ section:nth-child(odd) .animate.scroll,
     }
 }
  
-@media (max-width: 768px) {
+@media (max-width: 1500px) {
     .header {
         background: var(--bg-color);
     }
  
+    /* Show hamburger on tablets and below */
     #menu-icon {
         display: block;
     }
@@ -862,8 +921,15 @@ section:nth-child(odd) .animate.scroll,
         display: flex;
         flex-direction: column;
     }
+
+    /* Show hamburger on small phones */
+    #menu-icon {
+        display: block;
+    }
  
     .home-sci {
+        position: static; /* prevent overlap when stacked */
+        margin-top: 2rem;
         width: 160px;
     }
  
@@ -871,6 +937,9 @@ section:nth-child(odd) .animate.scroll,
         width: 38px;
         height: 38px;
     }
+
+    /* Put image above text when stacked */
+    .right__img { order: -1; }
 }
  
 @media (max-width: 462px) {
@@ -1125,7 +1194,7 @@ section:nth-child(odd) .animate.scroll,
 
 /* Services and Specialists Section Styling */
 .services, .specialists {
-    padding: 6rem 0;
+    padding: 6rem;
 }
 
 .heading {
