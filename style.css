@@ -179,7 +179,7 @@ section {
     margin-top: 10rem;
     align-items: flex-start;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 4rem;
     max-width: 100%;
 }
@@ -640,29 +640,12 @@ span {
     background: var(--main-color);
 }
  
-.skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span {
-    width: 95%;
-}
- 
-.skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span {
-    width: 95%;
-}
- 
-.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span {
-    width: 90%;
-}
- 
-.skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span {
-    width: 100%;
-}
- 
-.skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span {
-    width: 95%;
-}
- 
-.skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span {
-    width: 99%;
-}
+.progress:nth-child(1) .bar span { width: 95%; }
+.progress:nth-child(2) .bar span { width: 95%; }
+.progress:nth-child(3) .bar span { width: 90%; }
+.progress:nth-child(4) .bar span { width: 100%; }
+.progress:nth-child(5) .bar span { width: 95%; }
+.progress:nth-child(6) .bar span { width: 99%; }
  
 .contact {
     min-height: auto;
