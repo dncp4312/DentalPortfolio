@@ -2,7 +2,6 @@
  
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     border: none;
@@ -26,6 +25,8 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    /* padding: 15rem 5% 0 5%; */
+    padding: 0 9%;
 }
  
 .header {
@@ -87,8 +88,9 @@ body {
  
 section {
     min-height: 100vh;
-    padding: 10rem 9% 2rem;
+    padding-top: 10rem;
 }
+
 .right__ali {
     width: 88%;
     height: 88%;
@@ -106,8 +108,8 @@ section {
 .home {
     display: flex;
     align-items: flex-start;
-    padding: 15rem 9% 0 9%;
     gap: 3rem;
+    padding-top: 15rem;
     flex-wrap: nowrap; /* do not wrap until mobile breakpoint */
     /* background: url('/images/capture__bg.PNG') no-repeat; */
     background-size: cover;
@@ -180,7 +182,6 @@ section {
     grid-template-columns: 2fr 1fr;
     gap: 4rem;
     max-width: 100%;
-    padding: 0 9%;
 }
 
 /* @media (max-width: 991px) { */
@@ -1060,11 +1061,13 @@ section:nth-child(odd) .animate.scroll,
 }
  
 /* style.css - Add these styles to your existing CSS file */
+.testimonial {
+}
 
 .testimonial-grid {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
 .testimonial-card {
@@ -1198,8 +1201,6 @@ section:nth-child(odd) .animate.scroll,
 
 /* Services and Specialists Section Styling */
 .services, .specialists {
-    min-height: auto;
-    padding: 8rem 0rem;
 }
 
 .heading {
@@ -1216,9 +1217,8 @@ section:nth-child(odd) .animate.scroll,
 /* Container for Services and Specialists */
 .services-container, .specialists-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.5rem;
-    padding: 0 5%;
 }
 
 /* Individual Service Item Styling */
