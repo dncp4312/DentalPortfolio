@@ -127,7 +127,7 @@ section {
 }
  
 .home-content h1 span {
-    color: var(--text-color);
+    color: var(--main-color);
 }
  
 .home-content .text-animate {
