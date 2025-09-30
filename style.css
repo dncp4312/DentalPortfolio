@@ -168,7 +168,22 @@ section {
     font-size: 1.9rem;
     margin: 2rem 0 6rem;
 }
- 
+
+.home-sections-wrapper {
+    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    max-width: 100%;
+    padding: 0 9%;
+}
+
+/* @media (max-width: 991px) { */
+/*     .home-sections-wrapper { */
+/*         grid-template-columns: 1fr; */
+/*     } */
+/* }  */
+
 .btn-box {
     position: relative;
     display: flex;
