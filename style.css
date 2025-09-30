@@ -170,6 +170,7 @@ section {
 }
 
 .home-sections-wrapper {
+    margin-top: 10rem;
     align-items: flex-start;
     display: grid;
     grid-template-columns: 2fr 1fr;
