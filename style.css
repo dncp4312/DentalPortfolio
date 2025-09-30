@@ -47,10 +47,14 @@ body {
 }
  
 .logo {
-    position: relative;
-    font-size: 3rem;
-    color: var(--text-color);
-    font-weight: 600;
+    display: block;
+    width: 400px;
+    height: 100px; /* Adjust to your logo dimensions */
+    background-image: url('assets/logo_transparent.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: -9999px; /* Hides the text */
+    overflow: hidden;
 }
  
 .navbar {
