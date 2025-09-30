@@ -98,11 +98,15 @@ section {
     display: block;
 }
 
+.home-wrapper {
+    margin: 0;
+    padding: 0;
+}
+
 .home {
-    margin-top: 16rem;
     display: flex;
     align-items: flex-start;
-    padding: 0 9%;
+    padding: 15rem 9% 0 9%;
     gap: 3rem;
     flex-wrap: nowrap; /* do not wrap until mobile breakpoint */
     /* background: url('/images/capture__bg.PNG') no-repeat; */
@@ -1218,7 +1222,8 @@ section:nth-child(odd) .animate.scroll,
 
 /* Services and Specialists Section Styling */
 .services, .specialists {
-    padding: 6rem;
+    min-height: auto;
+    padding: 8rem 0rem;
 }
 
 .heading {
