@@ -1060,62 +1060,38 @@ section:nth-child(odd) .animate.scroll,
 }
  
 /* style.css - Add these styles to your existing CSS file */
- 
-/* testimonial section design  */
-.testimonial {
-    min-height: auto;
-    padding-bottom: 7rem;
+
+.testimonial-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
- 
-.testimonial h2 {
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 5rem;
-}
- 
-.testimonial .testimonial-row {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    gap: 2rem; 
-}
- 
-.testimonial-row .testimonial-column {
-    flex: 1 1 30%; /* Better for 6 testimonials - 3 per row on desktop */
-}
- 
-.testimonial-column .testimonial-box {
-    position: relative;
-}
- 
-.testimonial-box .testimonial-content {
-    position: relative;
+
+.testimonial-card {
     border: .2rem solid var(--main-color);
-    height: 600px; /* Increased height to accommodate longest review */
-    border-radius: .6rem;
-    padding: 2rem;
+    border-radius: 2rem;
     z-index: 1;
-    overflow: hidden;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Top-align content */
+    color: var(--text-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
- 
-.testimonial-box .testimonial-content i {
-    font-size: 3rem;
+
+.testimonial-card h3 {
+    font-size: 1.8rem;
     color: var(--main-color);
 }
- 
-.testimonial-content p {
+
+.testimonial-card p {
     font-size: 1.6rem;
     margin: 1.5rem 0;
     line-height: 1.6;
     text-align: left; /* Ensure text is left-aligned */
 }
- 
-.testimonial-content h3 {
-    font-size: 1.8rem;
+
+.testimonial-card i {
+    font-size: 3rem;
     color: var(--main-color);
 }
 
