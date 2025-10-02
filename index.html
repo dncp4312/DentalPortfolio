@@ -42,53 +42,55 @@
 
 		<p>I completed my Master of Dental Surgery (MDS) in Oral and Maxillofacial Pathology from Dr. D. Y. Patil University, building on my strong foundation in Bachelor of Dental Surgery (BDS). My journey in dentistry took a significant step when I founded Smile Up Dental Clinic in December 2016 in Pune, where I dedicated myself to providing quality dental care to my community. After years of successful practice and growth, I'm now excited to bring that same commitment to Dubai as a General and Cosmetic Dentist. Combining my advanced pathology training with clinical expertise, I am passionate about transforming lives through personalized, compassionate dental care – one smile at a time.</p>
 
-		<div class="btn-box min-width=1000px">
-		    <a href="https://zcal.co/i/s_-IT15O" class="btn" id="openZcal">ZCAL Appointment</a>
-		</div>
-
-		<div id="zcalModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
-		    background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:9999;">
-		    <div style="position:relative; width:90%; max-width:1120px; height:700px; background:#fff; border-radius:8px; overflow:hidden;">
-			<iframe src="https://zcal.co/i/s_-IT15O" style="width:100%; height:100%; border:0;"></iframe>
-			<button id="closeZcal" style="position:absolute; top:10px; right:10px; background:#000; color:#fff; border:none; padding:5px 10px; cursor:pointer; border-radius:4px;">X</button>
+		<div class="appointment-buttons">
+		    <div class="btn-box min-width=1000px">
+			<a href="https://zcal.co/i/s_-IT15O" class="btn" id="openZcal">Book Appointment - Pune</a>
 		    </div>
-		</div>
 
-		<script>
-		    (function() {
-			const openBtn = document.getElementById('openZcal');
-			const modal = document.getElementById('zcalModal');
-			const closeBtn = document.getElementById('closeZcal');
+		    <div id="zcalModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+			background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:9999;">
+			<div style="position:relative; width:90%; max-width:1120px; height:700px; background:#fff; border-radius:8px; overflow:hidden;">
+			    <iframe src="https://zcal.co/i/s_-IT15O" style="width:100%; height:100%; border:0;"></iframe>
+			    <button id="closeZcal" style="position:absolute; top:10px; right:10px; background:#000; color:#fff; border:none; padding:5px 10px; cursor:pointer; border-radius:4px;">X</button>
+			</div>
+		    </div>
 
-			if (!openBtn || !modal) return;
+		    <script>
+			(function() {
+			    const openBtn = document.getElementById('openZcal');
+			    const modal = document.getElementById('zcalModal');
+			    const closeBtn = document.getElementById('closeZcal');
 
-			// Open modal on click
-			openBtn.addEventListener('click', function(e) {
-			    e.preventDefault(); // prevent normal link
-			    modal.style.display = 'flex';
-			});
+			    if (!openBtn || !modal) return;
 
-			// Close modal on X button
-			closeBtn.addEventListener('click', function() {
-			    modal.style.display = 'none';
-			});
+			    // Open modal on click
+			    openBtn.addEventListener('click', function(e) {
+				e.preventDefault(); // prevent normal link
+				modal.style.display = 'flex';
+			    });
 
-			// Close modal when clicking outside iframe
-			window.addEventListener('click', function(e) {
-			    if (e.target === modal) {
+			    // Close modal on X button
+			    closeBtn.addEventListener('click', function() {
 				modal.style.display = 'none';
-			    }
-			});
-		    })();
-		</script>
+			    });
 
-		<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-		<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+			    // Close modal when clicking outside iframe
+			    window.addEventListener('click', function(e) {
+				if (e.target === modal) {
+				    modal.style.display = 'none';
+				}
+			    });
+			})();
+		    </script>
 
-		<div class="btn-box">
-		    <a href="#" class="btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/smileuptest/30min?hide_event_type_details=0&hide_gdpr_banner=0'}); return false;">
-			Calendly Appointment
-		    </a>
+		    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+		    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+		    <div class="btn-box">
+			<a href="#" class="btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/smileuptest/30min?hide_event_type_details=0&hide_gdpr_banner=0'}); return false;">
+			    Book Appointment - Dubai
+			</a>
+		    </div>
 		</div>
 	    </div>
 	    <div class="right__img">
