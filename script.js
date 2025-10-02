@@ -44,6 +44,14 @@ window.onscroll = () => {
 
     // animation footer on scroll
     let footer = document.querySelector('footer');
+    let footerTop = footer.offsetTop;
+
+    if (window.scrollY + window.innerHeight >= footerTop - 100) {
+        navLinks.forEach(links => {
+            links.classList.remove('active');
+            document.querySelector('header nav a[href*="contact"]').classList.add('active');
+        });
+    }
 
     footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
 }
