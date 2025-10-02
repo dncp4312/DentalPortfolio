@@ -91,7 +91,7 @@ body {
  
 section {
     min-height: 100vh;
-    padding-top: 10rem;
+    padding-top: 14rem;
 }
 
 .right__ali {
@@ -112,7 +112,7 @@ section {
     display: flex;
     align-items: flex-start;
     gap: 3rem;
-    padding-top: 15rem;
+    padding-top: 20rem;
     flex-wrap: nowrap; /* do not wrap until mobile breakpoint */
     /* background: url('/images/capture__bg.PNG') no-repeat; */
     background-size: cover;
@@ -262,9 +262,6 @@ section {
     .header {
         padding: 2rem 4%;
     }
-    /* section { */
-    /*     padding: 10rem 4% 2rem; */
-    /* } */
     .footer {
         padding: 2rem 4%;
     }
@@ -968,7 +965,7 @@ section:nth-child(odd) .animate.scroll,
  
     .footer p {
         margin-top: 2rem;
-        text-align: center;
+        text-align: left;
     }
 }
  
@@ -981,7 +978,7 @@ section:nth-child(odd) .animate.scroll,
         display: flex;
         align-items: center;
         flex-direction: column;
-        text-align: center;
+        text-align: left;
     }
  
     .home-content h1 {
