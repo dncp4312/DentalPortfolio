@@ -56,54 +56,39 @@ window.onscroll = () => {
     footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
 }
 
-(function() {
-    const openBtn = document.getElementById('openZcal');
+document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('zcalModal');
+    const iframe = document.getElementById('zcalIframe');
     const closeBtn = document.getElementById('closeZcal');
 
-    if (!openBtn || !modal) return;
+    // Only enhance if modal exists (JavaScript is working)
+    if (modal) {
+        // When any .open-zcal is clicked
+        document.querySelectorAll('.open-zcal').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // If it's a link, prevent default behavior
+                if (btn.tagName === 'A') {
+                    e.preventDefault();
+                }
+                
+                const link = btn.getAttribute('data-zcal');
+                iframe.src = link;
+                modal.style.display = 'flex';
+            });
+        });
 
-    // Open modal on click
-    openBtn.addEventListener('click', function(e) {
-	e.preventDefault(); // prevent normal link
-	modal.style.display = 'flex';
-    });
-
-    // Close modal on X button
-    closeBtn.addEventListener('click', function() {
-	modal.style.display = 'none';
-    });
-
-    // Close modal when clicking outside iframe
-    window.addEventListener('click', function(e) {
-	if (e.target === modal) {
-	    modal.style.display = 'none';
-	}
-    });
-})();
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   const modal = document.getElementById('zcalModal');
-//   const iframe = document.getElementById('zcalIframe');
-//   const closeBtn = document.getElementById('closeZcal');
-//
-//   // When any .open-zcal button is clicked
-//   document.querySelectorAll('.open-zcal').forEach(btn => {
-//     btn.addEventListener('click', () => {
-//       const link = btn.getAttribute('data-zcal');
-//       iframe.src = link;
-//       modal.style.display = 'flex';
-//     });
-//   });
-//
-//   // Close modal
-//   const closeModal = () => {
-//     modal.style.display = 'none';
-//     iframe.src = ''; // stop the session
-//   };
-//   closeBtn.addEventListener('click', closeModal);
-//   modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-//   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-// });
-//
-//     
+        // Close modal function
+        const closeModal = () => {
+            modal.style.display = 'none';
+            iframe.src = ''; // stop the session
+        };
+        
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', e => { 
+            if (e.target === modal) closeModal(); 
+        });
+        document.addEventListener('keydown', e => { 
+            if (e.key === 'Escape') closeModal(); 
+        });
+    }
+});
